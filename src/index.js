@@ -9,5 +9,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-let test = <h1>BYe BYe</h1>
-root.render(test);
