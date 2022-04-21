@@ -1,9 +1,23 @@
+* {
+	margin: 0;
+}
+
+:root {
+	--text-primary: #F0EBF4;
+	--background-primary: #A1C3D1;
+	--background-violet: #B39BC8; 
+	--background-pink: #F172A1;
+	--background-hotpink: #E64398;
+
+}
+
 .top {
 	width: 100%;
 	height: 50px;
 	position: sticky;
 	display: flex;
-	background-color: aqua;
+	background-color: var(--background-primary);
 	align-items: center;
 	top: 0;
+	font-family: 'Plus Jakarta Sans', sans-serif;
 }

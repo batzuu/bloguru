@@ -1,9 +1,8 @@
 import './NavBar.css'
 
-let NavBar = () => {
+export default () => {
 	return (
 		<div className="top">NavBar Icon</div>
+		
 	)
 }
-
-export default NavBar;
