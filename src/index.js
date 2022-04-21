@@ -4,16 +4,8 @@ import App from './App';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
-let testEle = <div></div>
-root.render(testEle)
-
-function doSecBad() {
-	root.render(
-		<React.StrictMode>
-			<App />
-		</React.StrictMode>
-	);
-}
-
-setInterval(doSecBad, 2000);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
