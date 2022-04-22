@@ -21,3 +21,41 @@
 	top: 0;
 	font-family: 'Plus Jakarta Sans', sans-serif;
 }
+
+.topRight, .topLeft {
+	flex: 3;
+}
+
+.topCenter {
+	flex: 6;
+}
+
+.topList {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.topIcon {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	margin: 1px;
+}
+
+.topImg {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	object-fit: contain;
+}
+
+.topRight {
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 40px;
+}
+
+.topLeft {
+	display: flex;
+}
