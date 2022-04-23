@@ -1,5 +1,7 @@
 import NavBar from "../../components/navbar/NavBar"
 import Header from "../../components/header/Header"
+import Posts from "../../components/posts/Posts"
+import SideBar from "../../components/sidebar/SideBar"
 
 
 export default function Home() {
@@ -8,6 +10,8 @@ export default function Home() {
 			<Header />
 			<div className="home">
 				HomePage
+				<Posts />
+				<SideBar />
 			</div>
 		</>
 	)

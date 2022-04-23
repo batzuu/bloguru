@@ -6,8 +6,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	font-family: 'Plus Jakarta Sans', sans-serif;
-	color: var(--text-primary);
+	font-family: 'Ms Madi', cursive;
+	color: #302138;
  }
   
   .headerTitlesSm {

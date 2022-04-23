@@ -1,4 +1,4 @@
-import './NavBar.css';
+import './navbar.css';
 import pic from '../../assets/tss.jpg';
 export default function NavBar () {
 	return (
