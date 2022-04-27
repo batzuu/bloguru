@@ -9,16 +9,19 @@ export default function SideBar() {
 	return (
 		<div className="sidebar">
 			<div className="sidebarItem">
-				<span className='sidebarTitle'>ABOUT ME</span>
+				<span className="sidebarTitle">ABOUT US</span>
 				<img src="https://i.imgur.com/DhL6AnL.jpeg" alt="google se foto" />
 				<p>
 					Aur mere doston kaisa chal raha h project? Respond to this line and sign whoever edited it. -Sutap
 					<br></br>
 					Changa Ji - Utkarsh
+					<br />
+					Acknowledged -Sutap <br />
+					Report to P9 immediately
 				</p>
 			</div>
 			<div className="sidebarItem">
-				<span className='sidebarTitle'>CATEGORIES</span>
+				<span className="sidebarTitle">CATEGORIES</span>
 				<ul className="sidebarList">
 					<li className="sidebarListItem">Life</li>
 					<li className="sidebarListItem">Music</li>

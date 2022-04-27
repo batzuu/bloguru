@@ -11,7 +11,7 @@ export default function Post(props) {
 				</div>
 				<span className="postTitle">{props.imgTitle}</span>
 				<hr />
-				<span className="postDate">1 hour ago</span>
+				<span className="postDate">{props.Tareekh} hours ago</span>
 			</div>
 			<p className="postDesc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut nam minus atque quaerat expedita rerum illo, qui nesciunt, facere blanditiis quas ullam ratione labore libero culpa totam saepe voluptates accusamus!
 			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat accusamus omnis voluptatem vel, sint inventore saepe quibusdam ad beatae distinctio sunt soluta? Assumenda iusto, corporis error alias minima molestiae natus!
