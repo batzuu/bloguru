@@ -11,7 +11,11 @@ export default function SideBar() {
 			<div className="sidebarItem">
 				<span className='sidebarTitle'>ABOUT ME</span>
 				<img src="https://i.imgur.com/DhL6AnL.jpeg" alt="google se foto" />
-				<p>Aur mere doston kaisa chal raha h project? Respond to this line and sign whoever edited it. -Sutap</p>
+				<p>
+					Aur mere doston kaisa chal raha h project? Respond to this line and sign whoever edited it. -Sutap
+					<br></br>
+					Changa Ji - Utkarsh
+				</p>
 			</div>
 			<div className="sidebarItem">
 				<span className='sidebarTitle'>CATEGORIES</span>

@@ -9,7 +9,7 @@ export default function Post(props) {
 					<span className="postCat">About</span>
 					<span className="postCat">Blank</span>
 				</div>
-				<span className="postTitle">IMAGE TITLE</span>
+				<span className="postTitle">{props.imgTitle}</span>
 				<hr />
 				<span className="postDate">1 hour ago</span>
 			</div>
