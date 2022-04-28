@@ -1,5 +1,5 @@
 .header {
-	margin-top: 60px;
+	padding-top: 60px;
  }
   
  .headerTitles {
@@ -7,7 +7,7 @@
 	flex-direction: column;
 	align-items: center;
 	font-family: 'Ms Madi', cursive;
-	color: #302138;
+	color: var(--text-primary);
  }
   
   .headerTitlesSm {
@@ -24,8 +24,10 @@
  }
   
   .headerImg {
-	width: 100%;
+	width: 98.7%;
 	height: 450px;
-	margin-top: 80px;
+	padding-top: 80px;
 	object-fit: cover;
+	padding-left: 10px;
+	padding-right: 10px;
  }

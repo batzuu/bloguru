@@ -19,7 +19,7 @@
 .postCat {
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 11px;
-	color: goldenrod;
+	color: gold;
 	line-height: 20px;
 	margin: 15px 10px 0px 10px;
 	cursor: pointer;
@@ -30,6 +30,7 @@
 	font-size: 24px;
 	margin-top: 15px;
 	cursor: pointer;
+	color: var(--text-primary);
 }
 
 .postDate {
@@ -44,7 +45,7 @@
 	margin-top: 15px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 14px;
-	color: #444;
+	color: white;
 	line-height: 20px;
 	overflow: hidden;
 	text-overflow: ellipsis;

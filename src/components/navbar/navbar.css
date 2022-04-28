@@ -3,11 +3,16 @@
 }
 
 :root {
-	--text-primary: #F0EBF4;
+	/* --text-primary: #F0EBF4;
 	--background-primary: #A1C3D1;
 	--background-violet: #B39BC8; 
 	--background-pink: #F172A1;
-	--background-hotpink: #E64398;
+	--background-hotpink: #E64398; */
+	--text-primary: #BC6FF1;
+	--text-secondary: #52057B;
+	--text-tertiary: #892CDC;
+	--background-primary: #000000;
+	background: #0d0d0d;
 }
 
 .top {
@@ -15,7 +20,7 @@
 	height: 50px;
 	position: sticky;
 	display: flex;
-	background-color: var(--background-hotpink);
+	background-color: var(--background-primary);
 	align-items: center;
 	top: 0;
 	font-family: 'Plus Jakarta Sans', sans-serif;
