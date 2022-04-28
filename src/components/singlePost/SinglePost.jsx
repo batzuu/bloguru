@@ -19,10 +19,8 @@ export default function SinglePost() {
 		  <div className="singlePostInfo">
 			<span>
 			  Author:
-			  <b className="singlePostAuthor">
-			  </b>
 			</span>
-			<span>1 day ago</span>
+			<span className="timeStamp">1 day ago</span>
 		  </div>
 		  <p className="singlePostDesc">
 			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste error

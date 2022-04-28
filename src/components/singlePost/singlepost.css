@@ -18,7 +18,8 @@
 	text-align: center;
 	margin: 10px;
 	font-size: 28px;
-	font-family: "Lora", sans-serif;
+	font-family: 'Bebas Neue', cursive;
+	color: var(--text-primary);
 }
 
 .singlePostEdit {
@@ -44,7 +45,7 @@
 	display: flex;
 	justify-content: space-between;
 	font-size: 16px;
-	color: #be9656;
+	color: gold;
 	font-family: "Varela Round", Arial, Helvetica, sans-serif;
 }
 
@@ -52,10 +53,16 @@
 	margin-left: 5px;
 }
 
+.timeStamp {
+	font-family: 'Josefin Sans', sans-serif;
+	font-style: italic;
+}
+
 .singlePostDesc {
-	color: #666;
+	color: white;
 	font-size: 18px;
-	line-height: 25px;
+	line-height: 23px;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 .singlePostDesc::first-letter {
@@ -63,3 +70,4 @@
 	font-size: 30px;
 	font-weight: 600;
 }
+
