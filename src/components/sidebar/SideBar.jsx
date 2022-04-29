@@ -17,7 +17,8 @@ export default function SideBar() {
 					Changa Ji - Utkarsh
 					<br />
 					Acknowledged -Sutap <br />
-					Report to P9 immediately
+					Report to P9 immediately <br />
+					P9 what? - tan <br/>					
 				</p>
 			</div>
 			<div className="sidebarItem">
