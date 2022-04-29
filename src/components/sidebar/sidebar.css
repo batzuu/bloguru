@@ -68,3 +68,18 @@
 	cursor: pointer;
 	color: white;
 }
+
+@media screen and (max-width: 1400px) {
+	.sidebarItem > p {
+		font-size: 13px;
+		line-height: 20px;
+	}
+
+	.sidebarListItem {
+		font-size: 14px;
+	}
+
+	.sidebarTitle {
+		font-size: 15px;
+	}
+}

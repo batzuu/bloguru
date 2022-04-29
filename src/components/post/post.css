@@ -1,5 +1,5 @@
 .post {
-	width: 450px;
+	width: 28.125rem;
 	margin: 0px 25px 40px 25px;
 }
 
@@ -52,4 +52,19 @@
 	display: -webkit-box;
 	-webkit-line-clamp: 4;
 	-webkit-box-orient: vertical;
+}
+
+@media screen and (max-width: 1400px) {
+	.post {
+		width: 400px;
+	}
+
+	.postTitle {
+		/* letter-spacing: 1px; */
+		font-size: 23px;
+	}
+	.postDesc {
+		font-size: 15px;
+
+	}
 }
