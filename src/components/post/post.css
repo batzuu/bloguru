@@ -68,3 +68,17 @@
 
 	}
 }
+
+@media screen and (max-width: 1270px) {
+	.post {
+		width: 350px;
+	}
+
+	.postDesc {
+		font-size: 13px;
+	}
+	
+	.postTitle {
+		font-size: 22px;
+	}
+}
