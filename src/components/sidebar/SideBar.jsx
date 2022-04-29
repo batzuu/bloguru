@@ -18,7 +18,8 @@ export default function SideBar() {
 					<br />
 					Acknowledged -Sutap <br />
 					Report to P9 immediately <br />
-					P9 what? - tan <br/>					
+					P9 what? - tan <br/>	
+					Username update - tan <br />				
 				</p>
 			</div>
 			<div className="sidebarItem">
