@@ -1,5 +1,6 @@
 import Post from '../post/Post'
 import './posts.css'
+
 const postData = [
 	{imgURL : "https://i.imgur.com/I3bpA1E.jpeg", imgTitle: "GAADI"},
 	{imgURL : "https://i.imgur.com/NLfRa3e.jpeg", imgTitle: "Pixel"},
