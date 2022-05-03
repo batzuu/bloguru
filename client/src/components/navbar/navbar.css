@@ -17,7 +17,7 @@
 
 .top {
 	width: 100%;
-	height: 50px;
+	height: 3.125rem;
 	position: sticky;
 	display: flex;
 	background-color: var(--background-primary);
@@ -52,15 +52,15 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
-	margin: 2px;
-	font-size: 20px;
+	margin: 0.125rem;
+	font-size: 1.25rem;
 	cursor: pointer;
 	color: var(--text-primary);
 }
 
 .topImg {
-	height: 40px;
-	width: 40px;
+	height: 2.5rem;
+	width: 2.5rem;
 	border-radius: 50%;
 	object-fit: cover;
 	cursor: pointer;
@@ -76,15 +76,15 @@
 }
 
 .topListItem {
-	margin-right: 20px;
-	font-size: 18px;
+	margin-right: 1.25rem;
+	font-size: 1.125rem;
 	color: var(--text-primary);
 	font-weight: bolder;
 }
 
 .topSearchIcon {
-	font-size: 18px;
+	font-size: 1.125rem;
 	color: var(--text-primary);
 	cursor: pointer;
-	margin-left: 15px;
+	margin-left: 0.938rem;
 }

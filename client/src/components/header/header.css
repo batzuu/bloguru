@@ -1,5 +1,5 @@
 .header {
-	padding-top: 60px;
+	padding-top: 3.75rem;
  }
   
  .headerTitles {
@@ -13,21 +13,21 @@
   .headerTitlesSm {
 	position: absolute;
 	top: 18%;
-	font-size: 20px;
+	font-size: 1.25rem;
 	font-family: 'Play', sans-serif;
  }
   
   .headerTitlesLg {
 	position: absolute;
 	top: 20%;
-	font-size: 100px;
+	font-size: 6.25rem;
  }
   
   .headerImg {
 	width: 98.7%;
 	height: 450px;
-	padding-top: 80px;
+	padding-top: 5rem;
 	object-fit: cover;
-	padding-left: 10px;
+	padding-left: 0.625rem;
 	/* padding-right: 10px; */
  }
