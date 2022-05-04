@@ -1,11 +1,11 @@
 import express, { Application } from 'express';
 import mongoose from 'mongoose';
 import compression from 'compression';
-import cors from 'cors'
-import morgan from 'morgan'
-import Controller from '@/utils/interfaces/controller.interface'
-import ErrorMiddleware from '@/middleware/error.middleware'
-import helmet from 'helmet'
+import cors from 'cors';
+import morgan from 'morgan';
+import Controller from '@/utils/interfaces/controller.interface';
+import ErrorMiddleware from '@/middleware/error.middleware';
+import helmet from 'helmet';
 
 class App {
 	public express: Application;
@@ -24,7 +24,7 @@ class App {
 	private initialiseControllers(controllers: Controller[]): void {
 		controllers.forEach((controller: Controller) => {
 			this.express.use('api', controller.router);
-		})
+		});
 	}
 
 	private initialiseMiddleware(): void {
@@ -41,7 +41,16 @@ class App {
 	}
 
 	private initialiseDbConnection(): void {
-		
+		const MONGO_URI = process.env.MONGO_URI as string;
+
+		mongoose.connect(MONGO_URI);
 	}
 
+	public listen(): void {
+		this.express.listen(this.port, () => {
+			console.log(`Listening on port ${this.port}`);
+		});
+	}
 }
+
+export default App;
