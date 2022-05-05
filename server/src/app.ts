@@ -15,15 +15,17 @@ class App {
 		this.express = express();
 		this.port = port;
 
+		// middleware must be initialised before controllers 
+		// else weird stuff happen i dont understand ** 
 		this.initialiseDbConnection();
-		this.initialiseControllers(controllers);
 		this.initialiseMiddleware();
+		this.initialiseControllers(controllers);
 		this.initialiseErrorHandling();
 	}
 
 	private initialiseControllers(controllers: Controller[]): void {
 		controllers.forEach((controller: Controller) => {
-			this.express.use('api', controller.router);
+			this.express.use('/api', controller.router);
 		});
 	}
 
