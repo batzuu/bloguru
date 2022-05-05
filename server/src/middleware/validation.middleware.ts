@@ -15,7 +15,7 @@ function validationMiddleware(schema: Joi.Schema ): RequestHandler{
 
 		try {
 			// Value is output after validation
-			const value = await schema.validate(req.body, validationOptions);
+			const value = await schema.validate(req.body, validationOptions).value;
 			req.body = value;
 			next();
 		} catch (e: any) {

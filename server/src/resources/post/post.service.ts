@@ -11,6 +11,7 @@ class PostService {
 			const post = await this.post.create({ title, body, author });
 			return post;
 		} catch(e) {
+			console.log(e);
 			throw new Error('Unable to create post');
 		}
 	}
