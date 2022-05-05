@@ -7,11 +7,25 @@ function validationMiddleware(schema: Joi.Schema ): RequestHandler{
 		res: Response,
 		next: NextFunction
 	): Promise<void> => {
-		const validationOptions = {
+		const validationOptions: Joi.AsyncValidationOptions = {
 			abortEarly: false,
-			
+			allowUnknown: true,
+			stripUnknown: true,
+		};
+
+		try {
+			// Value is output after validation
+			const value = await schema.validate(req.body, validationOptions);
+			req.body = value;
+			next();
+		} catch (e: any) {
+			const errors: string[] = [];
+			e.details.forEach((error: Joi.ValidationErrorItem)=> {
+				errors.push(error.message)	
+			});
+			res.status(400).send({ errors })
 		}
-	}
+	};
 }
 
 export default validationMiddleware;
