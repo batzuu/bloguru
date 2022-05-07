@@ -15,8 +15,8 @@ class App {
 		this.express = express();
 		this.port = port;
 
-		// middleware must be initialised before controllers 
-		// else weird stuff happen i dont understand ** 
+		// middleware must be initialised before controllers
+		// else weird stuff happen i dont understand **
 		this.initialiseDbConnection();
 		this.initialiseMiddleware();
 		this.initialiseControllers(controllers);
