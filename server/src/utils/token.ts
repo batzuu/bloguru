@@ -18,3 +18,5 @@ const verifyToken = async (
 		});
 	});
 };
+
+export default { createToken, verifyToken };
