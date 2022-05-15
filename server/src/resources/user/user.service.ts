@@ -5,9 +5,10 @@ class UserService {
 	private user = UserModel;
 
 	/**
-	 * Creates a new user
+	 * Attemps to register a
+	 * new user
 	 */
-	public async create(
+	public async register(
 		name: string,
 		email: string,
 		password: string,
@@ -18,9 +19,11 @@ class UserService {
 			const accessToken = token.createToken(user);
 			return accessToken;
 		} catch (error) {
+			console.log(error);
 			throw new Error('Unable to create user');
 		}
 	}
+
 	/**
 	 * Attempts to login a user
 	 */
@@ -41,3 +44,5 @@ class UserService {
 		}
 	}
 }
+
+export default UserService;
