@@ -29,7 +29,7 @@ class UserService {
 	 */
 	public async login(email: string, password: string): Promise<string | Error> {
 		try {
-			const user = await this.user.findOne({ email });
+			const user = await this.user.findOne({ email: email }).exec();
 			if (!user) {
 				throw new Error('Unable to find user with that Email address');
 			}
@@ -40,6 +40,7 @@ class UserService {
 				throw new Error('Wrong Credentials given');
 			}
 		} catch (error) {
+			console.log(error);
 			throw new Error('Unable to log the user in');
 		}
 	}
