@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction, RequestHandler } from 'express';
 import Joi from 'joi';
 
-function validationMiddleware(schema: Joi.Schema ): RequestHandler{
-	return async(
+function validationMiddleware(schema: Joi.Schema): RequestHandler {
+	return async (
 		req: Request,
 		res: Response,
 		next: NextFunction
@@ -20,10 +20,11 @@ function validationMiddleware(schema: Joi.Schema ): RequestHandler{
 			next();
 		} catch (e: any) {
 			const errors: string[] = [];
-			e.details.forEach((error: Joi.ValidationErrorItem)=> {
-				errors.push(error.message)	
+			e.details.forEach((error: Joi.ValidationErrorItem) => {
+				errors.push(error.message);
 			});
-			res.status(400).send({ errors })
+			console.log(errors);
+			res.status(400).send({ errors });
 		}
 	};
 }

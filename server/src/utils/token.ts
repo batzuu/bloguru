@@ -8,7 +8,7 @@ const createToken = (user: User): string => {
 	});
 };
 
-const verifyToken = async (
+export const verifyToken = async (
 	token: string
 ): Promise<jwt.VerifyErrors | Token> => {
 	return new Promise((resolve, reject) => {

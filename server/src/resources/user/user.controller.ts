@@ -21,16 +21,21 @@ class UserController implements Controller {
 			validationMiddleware(validate.register),
 			this.register
 		);
+		this.router.post(
+			`${this.path}/login`,
+			validationMiddleware(validate.login),
+			this.login
+		);
+		this.router.get(`${this.path}`, authenticated, this.getUser);
 	}
 
-	private async register(
+	private register = async (
 		req: Request,
 		res: Response,
 		next: NextFunction
-	): Promise<Response | void> {
+	): Promise<Response | void> => {
 		try {
 			const { name, email, password } = req.body;
-
 			const token = await this.UserService.register(
 				name,
 				email,
@@ -39,7 +44,41 @@ class UserController implements Controller {
 			);
 			res.status(201).json({ token });
 		} catch (error: any) {
+			console.log(error);
 			next(new HttpException(400, error.message));
 		}
-	}
+	};
+
+	private login = async (
+		req: Request,
+		res: Response,
+		next: NextFunction
+	): Promise<Response | void> => {
+		try {
+			const { email, password } = req.body;
+
+			const token = await this.UserService.login(email, password);
+			res.status(200).json({ token });
+		} catch (error: any) {
+			next(new HttpException(400, error.message));
+		}
+	};
+
+	private getUser = async (
+		req: Request,
+		res: Response,
+		next: NextFunction
+	): Promise<Response | void> => {
+		// req will contain user propterty
+		// custum request definition is exported in the utilities
+		if (!req.user) {
+			return next(new HttpException(404, 'No logged in user'));
+		}
+
+		// req.user will contain the updated user information
+		// authenticated with the token
+		res.status(200).json({ data: req.user });
+	};
 }
+
+export default UserController;
