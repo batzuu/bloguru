@@ -1,27 +1,44 @@
-import './navbar.css';
 import pic from '../../assets/tss.jpg';
-export default function NavBar () {
+import './navbar.css';
+import {Link} from 'react-router-dom';
+import {useState} from 'react';
+
+export default function NavBarb() {
+	const [click, setClick] = useState(false)
+
+	const handleClick = () => setClick(!click)
+	const closedMobileMenu = () => setClick(false);
+
 	return (
-		<div className="top">
-			<div className="topLeft">
-				<i className="topIcon fa-brands fa-facebook-square"></i>
-				<i className="topIcon fa-brands fa-twitter-square"></i>
-				<i className="topIcon fa-brands fa-linkedin"></i>
-				<i className="topIcon fa-brands fa-instagram-square"></i>
-			</div>
-			<div className="topCenter">
-				<ul className="topList">
-					<li className="topListItem">HOME</li>
-					<li className="topListItem">ABOUT</li>
-					<li className="topListItem">CONTACT</li>
-					<li className="topListItem">WRITE</li>
-					<li className="topListItem">LOGOUT</li>
+		<>
+			<nav className="navbar">
+				<Link to='/' className='navbar-logo'>
+					Bloguru
+				</Link>
+				<div className="menu-icon" onClick={handleClick}>
+					<i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+				</div>
+				<ul className={click ? 'nav-menu active' : 'nav-menu'}>
+					<li className="nav-item">
+						<Link to='/' className='nav-links' onClick={closedMobileMenu}>HOME</Link>
+					</li>
+					<li className="nav-item">
+						<Link to='/' className='nav-links' onClick={closedMobileMenu}>ABOUT</Link>
+					</li>
+					<li className="nav-item">
+						<Link to='/' className='nav-links' onClick={closedMobileMenu}>WRITE</Link>
+					</li>
+					<li className="nav-item">
+						<Link to='/' className='nav-links' onClick={closedMobileMenu}>CONTACT</Link>
+					</li>
+					<li className="nav-item">
+						<Link to='/' className='nav-links' onClick={closedMobileMenu}>LOGOUT</Link>
+					</li>
+
+
 				</ul>
-			</div>
-			<div className="topRight">
-				<img className="topImg" src={pic} alt="img not found" />
-				<i className="topSearchIcon fa-solid fa-magnifying-glass"></i>
-			</div>
-		</div>
+			</nav>
+		</>
 	)
 }
+
