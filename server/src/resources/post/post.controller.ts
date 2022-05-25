@@ -65,7 +65,7 @@ class PostController implements Controller {
 			}
 			res.status(200).json(postRes);
 		} catch (e: any) {
-			next(new HttpException(400, e.message));
+			next(new HttpException(404, e.message));
 		}
 	};
 }

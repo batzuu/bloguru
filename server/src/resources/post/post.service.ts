@@ -38,7 +38,7 @@ class PostService {
 			return posts;
 		} catch (e: any) {
 			console.log(e);
-			throw new Error('Error in fetching post');
+			throw new Error('Error in fetching post. Check id if supplied');
 		}
 	}
 }
