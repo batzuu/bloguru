@@ -1,4 +1,4 @@
-import express, { Application } from 'express';
+import express, { Application, NextFunction } from 'express';
 import mongoose from 'mongoose';
 import compression from 'compression';
 import cors from 'cors';
@@ -24,6 +24,10 @@ class App {
 	}
 
 	private initialiseControllers(controllers: Controller[]): void {
+		// healthcheck
+		this.express.get('/api/healthcheck/', (req, res, next) => {
+			res.sendStatus(200);
+		});
 		controllers.forEach((controller: Controller) => {
 			this.express.use('/api', controller.router);
 		});
