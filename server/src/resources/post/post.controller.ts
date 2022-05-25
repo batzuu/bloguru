@@ -4,6 +4,7 @@ import HttpException from '@/utils/exceptions/http.exception';
 import validationMiddleware from '@/middleware/validation.middleware';
 import validate from '@/resources/post/post.validation';
 import PostService from '@/resources/post/post.service';
+import Post from '@/resources/post/post.interface';
 
 class PostController implements Controller {
 	public path = '/posts';
@@ -25,6 +26,10 @@ class PostController implements Controller {
 			validationMiddleware(validate.create),
 			this.create
 		);
+
+		// Fetching posts from the database
+		this.router.get(`${this.path}`, this.fetch);
+		this.router.get(`${this.path}/:id`, this.fetch);
 	}
 
 	// Method to create a new post
@@ -39,6 +44,27 @@ class PostController implements Controller {
 			res.status(201).send({ postRes });
 		} catch (e: any) {
 			// e.message will contain the message sent from the service throwing the error
+			next(new HttpException(400, e.message));
+		}
+	};
+
+	// Method to fetch posts
+	private fetch = async (
+		req: Request,
+		res: Response,
+		next: NextFunction
+	): Promise<Response | void> => {
+		try {
+			const id = req.params.id;
+			console.log(req.body);
+			let postRes: Post[] | null;
+			if (id) {
+				postRes = await this.PostService.fetch(id);
+			} else {
+				postRes = await this.PostService.fetch();
+			}
+			res.status(200).json(postRes);
+		} catch (e: any) {
 			next(new HttpException(400, e.message));
 		}
 	};
