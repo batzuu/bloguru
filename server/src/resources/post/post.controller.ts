@@ -63,7 +63,7 @@ class PostController implements Controller {
 			} else {
 				postRes = await this.PostService.fetch();
 			}
-			res.status(200).json(postRes);
+			res.status(200).json({ postRes });
 		} catch (e: any) {
 			next(new HttpException(404, e.message));
 		}

@@ -49,7 +49,12 @@ class App {
 	private initialiseDbConnection(): void {
 		const MONGO_URI = process.env.MONGO_URI as string;
 
-		mongoose.connect(MONGO_URI);
+		try {
+			mongoose.connect(MONGO_URI);
+		} catch (e: any) {
+			console.error(e);
+			return;
+		}
 	}
 
 	public listen(): void {
