@@ -26,7 +26,7 @@ export default function NavBarb() {
 						<Link to='/' className='nav-links' onClick={closedMobileMenu}>ABOUT</Link>
 					</li>
 					<li className="nav-item">
-						<Link to='/' className='nav-links' onClick={closedMobileMenu}>WRITE</Link>
+						<Link to='/write' className='nav-links' onClick={closedMobileMenu}>WRITE</Link>
 					</li>
 					<li className="nav-item">
 						<Link to='/' className='nav-links' onClick={closedMobileMenu}>CONTACT</Link>

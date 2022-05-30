@@ -4,6 +4,7 @@ const create = Joi.object({
 	title: Joi.string().required(),
 	body: Joi.string().required(),
 	author: Joi.string().required(),
+	imglink: Joi.string().required(),
 });
 
 // File will contain validation check schema for post related api calls ex: could
