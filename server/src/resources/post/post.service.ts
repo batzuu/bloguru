@@ -8,11 +8,12 @@ class PostService {
 	public async create(
 		title: string,
 		body: string,
-		author: string
+		author: string,
+		imglink: string
 	): Promise<Post> {
 		try {
 			// the create in this line is the mongo create method
-			const post = await this.post.create({ title, body, author });
+			const post = await this.post.create({ title, body, author, imglink });
 			return post;
 		} catch (e) {
 			console.log(e);

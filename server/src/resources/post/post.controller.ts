@@ -39,8 +39,13 @@ class PostController implements Controller {
 		next: NextFunction
 	): Promise<Response | void> => {
 		try {
-			const { title, body, author } = req.body;
-			const postRes = await this.PostService.create(title, body, author);
+			const { title, body, author, imglink } = req.body;
+			const postRes = await this.PostService.create(
+				title,
+				body,
+				author,
+				imglink
+			);
 			res.status(201).send({ postRes });
 		} catch (e: any) {
 			// e.message will contain the message sent from the service throwing the error

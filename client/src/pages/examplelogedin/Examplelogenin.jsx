@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "../../api/axios";
 
 export default function Examplelogenin() {
-	const [users, setUsers] = useState();
+	const [posts, setPosts] = useState();
 
 	useEffect(() => {
 		let isMounted = true;
@@ -10,11 +10,11 @@ export default function Examplelogenin() {
 
 		const getUser = async () => {
 			try {
-				const response = await axios.get("/users", {
+				const response = await axios.get("/posts", {
 					signal: controller.signal,
 				});
 				console.log(response.data);
-				isMounted && setUsers(response.data);
+				isMounted && setPosts(response.data);
 			} catch (e) {
 				console.log(e);
 			}
@@ -30,15 +30,15 @@ export default function Examplelogenin() {
 
 	return (
 		<article>
-			<h2>User List</h2>
-			{users?.length ? (
+			<h2>Post List</h2>
+			{posts?.length ? (
 				<ul>
-					{users.map((user, i) => (
-						<li key={i}>user?.username</li>
+					{posts.map((user, i) => (
+						<li key={i}>posts?.title</li>
 					))}
 				</ul>
 			) : (
-				<p>No users to display</p>
+				<p>No posts to display</p>
 			)}
 		</article>
 	);
