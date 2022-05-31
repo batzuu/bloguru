@@ -46,7 +46,7 @@ class PostController implements Controller {
 				author,
 				imglink
 			);
-			res.status(201).send({ postRes });
+			res.status(201).send(postRes);
 		} catch (e: any) {
 			// e.message will contain the message sent from the service throwing the error
 			next(new HttpException(400, e.message));
@@ -68,7 +68,7 @@ class PostController implements Controller {
 			} else {
 				postRes = await this.PostService.fetch();
 			}
-			res.status(200).json({ postRes });
+			res.status(200).json(postRes);
 		} catch (e: any) {
 			next(new HttpException(404, e.message));
 		}
