@@ -6,7 +6,7 @@ import Settings from "./pages/settings/Settings";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
-import Examplelogenin from "./pages/examplelogedin/Examplelogenin";
+import Examplelogenin from "./components/examplelogin/Examplelogin";
 
 export default function App() {
 	return (

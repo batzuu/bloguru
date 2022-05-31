@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "../../api/axios";
+import "./examplelogin.css";
 
-export default function Examplelogenin() {
+export default function Examplelogin() {
 	const [posts, setPosts] = useState();
 
 	useEffect(() => {
@@ -16,6 +17,7 @@ export default function Examplelogenin() {
 				console.log(response.data);
 				isMounted && setPosts(response.data);
 			} catch (e) {
+				console.log("hello");
 				console.log(e);
 			}
 		};
@@ -29,12 +31,12 @@ export default function Examplelogenin() {
 	}, []);
 
 	return (
-		<article>
+		<article className="postlist">
 			<h2>Post List</h2>
 			{posts?.length ? (
 				<ul>
-					{posts.map((user, i) => (
-						<li key={i}>posts?.title</li>
+					{posts.map((post) => (
+						<li key={post._id}>{post?.title}</li>
 					))}
 				</ul>
 			) : (
