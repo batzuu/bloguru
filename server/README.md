@@ -39,21 +39,23 @@ The REST API is described below. Postman or cURL is recommended for testing.
 
     [
         {
-            "_id": "628e746081c36c2adbb237ea",
-            "title": "123",
-            "body": "body123",
-            "author": "abc",
-            "createdAt": "2022-05-25T18:24:32.269Z",
-            "updatedAt": "2022-05-25T18:24:32.269Z",
+            "_id": "6296238894f43438c7ef167b",
+            "title": "teaast1",
+            "body": "exadamplebody",
+            "author": "sasdome",
+            "imglink": "somelink",
+            "createdAt": "2022-05-31T14:17:44.662Z",
+            "updatedAt": "2022-05-31T14:17:44.662Z",
             "__v": 0
         },
         {
-            "_id": "628e759d81c36c2adbb237ec",
-            "title": "test1",
-            "body": "examplebody",
-            "author": "some",
-            "createdAt": "2022-05-25T18:29:49.469Z",
-            "updatedAt": "2022-05-25T18:29:49.469Z",
+            "_id": "629628714b05d4171c6c01b0",
+            "title": "wow1",
+            "body": "bodii",
+            "author": "sme",
+            "imglink": "imggur",
+            "createdAt": "2022-05-31T14:38:41.077Z",
+            "updatedAt": "2022-05-31T14:38:41.077Z",
             "__v": 0
         }
     ]
@@ -67,23 +69,23 @@ The REST API is described below. Postman or cURL is recommended for testing.
 ### Request body
 
     {
-        "title": "123",
-        "body": "body123",
-        "author": "abc"
+        "title": "wow1",
+        "body": "bodii",
+        "author": "sme",
+        "imglink": "imggur"
     }
 
 ### Response
 
     {
-        "postRes": {
-            "title": "123",
-            "body": "body123",
-            "author": "abc",
-            "_id": "628e746081c36c2adbb237ea",
-            "createdAt": "2022-05-25T18:24:32.269Z",
-            "updatedAt": "2022-05-25T18:24:32.269Z",
-            "__v": 0
-        }
+        "title": "wow1",
+        "body": "bodii",
+        "author": "sme",
+        "imglink": "imggur",
+        "\_id": "629628714b05d4171c6c01b0",
+        "createdAt": "2022-05-31T14:38:41.077Z",
+        "updatedAt": "2022-05-31T14:38:41.077Z",
+        "\_\_v": 0
     }
 
 ## Get a specific Post
@@ -100,6 +102,7 @@ The REST API is described below. Postman or cURL is recommended for testing.
             "title": "123",
             "body": "body123",
             "author": "abc",
+            "imglink": "somelink",
             "createdAt": "2022-05-25T18:24:32.269Z",
             "updatedAt": "2022-05-25T18:24:32.269Z",
             "__v": 0
