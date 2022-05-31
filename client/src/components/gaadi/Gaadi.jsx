@@ -1,6 +1,6 @@
 import './singlepost.css'
 
-export default function SinglePost() {
+export default function Gaadi() {
 	return (
 		<div className="singlePost">
 		<div className="singlePostWrapper">
@@ -20,7 +20,7 @@ export default function SinglePost() {
 			<span>
 			  Author: Sutap
 			</span>
-			<span className="timeStamp">1 day ago</span>
+			<span className="timeStamp">7 hours ago</span>
 		  </div>
 		  <p className="singlePostDesc">
 			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste error

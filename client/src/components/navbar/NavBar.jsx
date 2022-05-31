@@ -22,17 +22,16 @@ export default function NavBarb() {
 					<li className="nav-item">
 						<Link to='/' className='nav-links' onClick={closedMobileMenu}>HOME</Link>
 					</li>
+					{/* <li className="nav-item">
+					</li> */}
 					<li className="nav-item">
-						<Link to='/' className='nav-links' onClick={closedMobileMenu}>ABOUT</Link>
-					</li>
-					<li className="nav-item">
-						<Link to='/' className='nav-links' onClick={closedMobileMenu}>WRITE</Link>
-					</li>
-					<li className="nav-item">
-						<Link to='/' className='nav-links' onClick={closedMobileMenu}>CONTACT</Link>
+						<Link to='/write' className='nav-links' onClick={closedMobileMenu}>WRITE</Link>
 					</li>
 					<li className="nav-item">
 						<Link to='/' className='nav-links' onClick={closedMobileMenu}>LOGOUT</Link>
+					</li>
+					<li className="nav-item">
+						<Link to='/usersettings' className='nav-links' onClick={closedMobileMenu}>SETTINGS</Link>
 					</li>
 
 

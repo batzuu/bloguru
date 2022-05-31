@@ -8,7 +8,7 @@ export default function Login() {
 				<label>Email</label>
 				<input
 					className="loginInput"
-					type="text"
+					type="email"
 					placeholder="Enter your email..."
 				/>
 				<label>Password</label>
