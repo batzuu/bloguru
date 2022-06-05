@@ -1,12 +1,13 @@
-import { useRef, userState, useEffect, useState, useContext } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import AuthContext from '../../context/AuthProvider';
 import axios from '../../api/axios';
 import './login.css';
+import useAuth from '../../hooks/UseAuth';
 
 const LOGIN_URL = '/users/login';
 
 export default function Login() {
-	const { setAuth } = useContext(AuthContext);
+	const { setAuth } = useAuth();
 	const emailRef = useRef();
 	const errRef = useRef();
 
@@ -33,8 +34,9 @@ export default function Login() {
 				LOGIN_URL,
 				JSON.stringify({ email, password }),
 				{
-					headers: { 'Content-Type': 'application/json; charset=UTF-8' },
-					type: 'application/json',
+					headers: {
+						'Content-Type': 'application/json; charset=UTF-8',
+					},
 				}
 			);
 			console.log(JSON.stringify(response?.data));
