@@ -15,19 +15,27 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bloguru',
       theme: ThemeData(
-        textTheme: const TextTheme(
-            bodyText1: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontFamily: "Poppins",
-              fontWeight: FontWeight.w300,
-            ),
-            headlineLarge: TextStyle(
-              color: Colors.white,
-              fontFamily: "Poppins",
-              fontSize: 48,
-              fontWeight: FontWeight.bold,
-            )),
+        unselectedWidgetColor: Colors.white,
+        textTheme: TextTheme(
+          bodyText1: const TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontFamily: "Poppins",
+            fontWeight: FontWeight.w300,
+          ),
+          headlineLarge: const TextStyle(
+            color: Colors.white,
+            fontFamily: "Poppins",
+            fontSize: 48,
+            fontWeight: FontWeight.bold,
+          ),
+          headlineSmall: const TextStyle(
+            color: Colors.white,
+            fontFamily: "Poppins",
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         primaryColor: const Color.fromRGBO(181, 111, 241, 1),
       ),
       initialRoute: LoginScreen.routeName,
