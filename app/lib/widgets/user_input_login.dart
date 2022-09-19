@@ -10,10 +10,13 @@ class UserInputLogin extends StatefulWidget {
 }
 
 class _UserInputLoginState extends State<UserInputLogin> {
-  bool _isValidEmail(String email) {
-    return RegExp(
-            r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
-        .hasMatch(email);
+  bool autoLogin = false;
+
+  UnderlineInputBorder buildInputBorderRadius() {
+    return UnderlineInputBorder(
+      borderSide: const BorderSide(color: Color.fromRGBO(80, 80, 80, 1)),
+      borderRadius: BorderRadius.circular(8),
+    );
   }
 
   var userData = OldUser(
@@ -25,118 +28,114 @@ class _UserInputLoginState extends State<UserInputLogin> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15),
-      child: Form(
-        child: Column(
-          children: [
-            Container(
-              // height: 65,
-              margin: const EdgeInsets.only(left: 15, right: 15),
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: const Color.fromRGBO(80, 80, 80, 1)),
-              child: TextFormField(
-                style: Theme.of(context).textTheme.bodyText1,
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  // focusColor: Colors.white,
-                  alignLabelWithHint: true,
-                  prefixIcon: const Icon(
-                    Icons.email_outlined,
-                    color: Colors.white,
-                  ),
-                  // prefixIconColor: Colors.white,
-                  hintText: "Email",
-                  hintStyle: Theme.of(context).textTheme.bodyText1,
-                  border: InputBorder.none,
+    return Form(
+      child: Column(
+        children: [
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.all(10),
+            child: TextFormField(
+              style: Theme.of(context).textTheme.bodyText1,
+              keyboardType: TextInputType.emailAddress,
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: const Color.fromRGBO(80, 80, 80, 1),
+                focusedErrorBorder: buildInputBorderRadius(),
+                enabledBorder: buildInputBorderRadius(),
+                focusedBorder: buildInputBorderRadius(),
+                errorBorder: buildInputBorderRadius(),
+                prefixIcon: const Icon(
+                  Icons.email_outlined,
+                  color: Colors.white,
                 ),
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                validator: (val) => _isValidEmail(val.toString())
-                    ? null
-                    : "Entred email is not valid",
-                onSaved: (newVal) {
-                  userData = OldUser(newVal.toString(), userData.password);
-                },
+                hintText: "Email",
+                hintStyle: Theme.of(context).textTheme.bodyText1,
+                border: InputBorder.none,
               ),
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              validator: (val) => _isValidEmail(val.toString())
+                  ? null
+                  : "Entred email is not valid",
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            Container(
-              // height: 65,
-              margin: const EdgeInsets.only(left: 15, right: 15),
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: const Color.fromRGBO(80, 80, 80, 1)),
-              child: TextFormField(
-                obscureText: true,
-                style: Theme.of(context).textTheme.bodyText1,
-                decoration: InputDecoration(
-                  // focusColor: Colors.white,
-                  alignLabelWithHint: true,
-                  prefixIcon: const Icon(
-                    Icons.lock_outline,
-                    color: Colors.white,
-                  ),
-                  // prefixIconColor: Colors.white,
-                  hintText: "Password",
-                  hintStyle: Theme.of(context).textTheme.bodyText1,
-                  border: InputBorder.none,
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.all(10),
+            child: TextFormField(
+              obscureText: true,
+              style: Theme.of(context).textTheme.bodyText1,
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: const Color.fromRGBO(80, 80, 80, 1),
+                focusedErrorBorder: buildInputBorderRadius(),
+                enabledBorder: buildInputBorderRadius(),
+                focusedBorder: buildInputBorderRadius(),
+                errorBorder: buildInputBorderRadius(),
+                prefixIcon: const Icon(
+                  Icons.lock_outline_rounded,
+                  color: Colors.white,
                 ),
-                validator: (val) {
-                  if (val != null) {
-                    if (val.isEmpty || val == '') {
-                      return "Please Enter a value";
-                    }
-                  } else {
-                    return "Please enter a value";
-                  }
-                  return null;
-                },
-                onSaved: (newVal) {
-                  userData = OldUser(userData.email, newVal.toString());
-                },
+                hintText: "Password",
+                hintStyle: Theme.of(context).textTheme.bodyText1,
+                border: InputBorder.none,
               ),
+              // autovalidateMode: AutovalidateMode.always,
+              // validator: (val) => _isValidEmail(val.toString())
+              //     ? null
+              //     : "Entred email is not valid",
             ),
-            CheckboxListTile(
-              activeColor: Theme.of(context).primaryColor,
-              controlAffinity: ListTileControlAffinity.leading,
-              title: Text(
-                "Keep me signed in.",
-                style: Theme.of(context).textTheme.bodyText1,
-              ),
-              value: _isKeepLogin,
-              onChanged: (bool? value) {
-                if (value != null) {
-                  setState(() {
-                    _isKeepLogin = value;
-                  });
-                }
-              },
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              children: [
+                Theme(
+                  data: ThemeData(unselectedWidgetColor: Colors.white),
+                  child: Checkbox(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5)),
+                    activeColor: Theme.of(context).primaryColor,
+                    checkColor: Colors.black,
+                    value: autoLogin,
+                    onChanged: (val) {
+                      setState(() {
+                        autoLogin = val ?? false;
+                      });
+                    },
+                  ),
+                ),
+                Text(
+                  "Keep me signed in",
+                  style: Theme.of(context).textTheme.bodyText1,
+                )
+              ],
             ),
-            const SizedBox(
-              height: 20,
+          ),
+          const SizedBox(
+            height: 50,
+          ),
+          ElevatedButton(
+            style: ButtonStyle(
+              fixedSize: MaterialStateProperty.all(const Size(300, 50)),
+              shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+              backgroundColor: MaterialStateProperty.all<Color>(
+                  Theme.of(context).primaryColor),
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 15, right: 15),
-              // padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: Theme.of(context).primaryColor,
-              ),
-              child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Login",
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  )),
-            )
-          ],
-        ),
+            onPressed: () {},
+            child: Text(
+              "Login",
+              style: Theme.of(context).textTheme.headline1,
+            ),
+          )
+        ],
       ),
+      // ),
     );
+  }
+
+  bool _isValidEmail(String email) {
+    return RegExp(
+            r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+        .hasMatch(email);
   }
 }
